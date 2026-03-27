@@ -109,6 +109,17 @@ public class FiapBankAtm {
             System.out.println("========================================");
             System.out.print("Escolha uma opção: ");
 
+            // 2° Tratamento de entradas inválidas (não numérica)
+            if (leitor.hasNextInt()) {
+                opcaoMenu = leitor.nextInt();
+            } else {
+                System.out.println("Opção inválida! Digite um número de 1 a 4.");
+                System.out.println();
+                leitor.next(); // consumir entrada inválida
+                continue;
+            }
+
+            System.out.println();
 
 
     }
