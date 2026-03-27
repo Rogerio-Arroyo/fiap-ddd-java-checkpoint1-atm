@@ -82,6 +82,16 @@ public class FiapBankAtm {
             }
         }
 
+        // 4° Bloqueio de Segurança
+        if (!autenticado) {
+            System.out.println();
+            System.out.println("ACESSO BLOQUEADO POR MOTIVOS DE SEGURANÇA");
+            System.out.println("ENTRE EM CONTATO COM FIAP BANK");
+            System.out.println("E-mail: fiap.bank.sp@gmail.com");
+            System.out.println("Tel: (11) 4002-8922");
+            leitor.close();
+            return;
+        }
 
 
     }
