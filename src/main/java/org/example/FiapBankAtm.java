@@ -93,6 +93,23 @@ public class FiapBankAtm {
             return;
         }
 
+        // Etapa de Menu Principal - 1º Opções do Menu
+        double saldo = 0.00;
+        int opcaoMenu;
+        boolean executando = true;
+
+        while (executando) {
+            System.out.println("========================================");
+            System.out.println("          MENU PRINCIPAL");
+            System.out.println("========================================");
+            System.out.println("  [ 1 ] Consultar Saldo");
+            System.out.println("  [ 2 ] Fazer Depósito");
+            System.out.println("  [ 3 ] Fazer Saque");
+            System.out.println("  [ 4 ] Sair");
+            System.out.println("========================================");
+            System.out.print("Escolha uma opção: ");
+
+
 
     }
 }
