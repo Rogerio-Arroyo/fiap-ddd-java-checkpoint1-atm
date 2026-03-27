@@ -7,7 +7,6 @@ public class FiapBankAtm {
         Scanner leitor = new Scanner(System.in);
 
         // Etapa de Cadastro de Dados e Autentificação - 1º Solicitar Nome Completo do Cliente
-
         System.out.println("========================================");
         System.out.println("   BEM-VINDO AO FIAP BANK - ATM");
         System.out.println("========================================");
@@ -29,13 +28,9 @@ public class FiapBankAtm {
         System.out.println();
 
         // 2º Cadastro de Senha Forte
-
         String regexSenhaForte = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()\\-_+=?><])(?=.*\\d).{8,}$";
         String senhaCadastrada;
 
-        //*String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()-=+])(?=.*\\d).{8,}$";
-        //
-        //        if(senha.matches(regex)){
 
         System.out.println("--- Cadastro de Senha ---");
         System.out.println("Sua senha deve conter:");
@@ -57,6 +52,33 @@ public class FiapBankAtm {
             } else {
                 System.out.println("Senha fraca! Tente novamente seguindo os critérios acima.");
                 System.out.println();
+            }
+        }
+
+        // 3° Autenticação de Login (Comparar a senha digitada com a senha forte recém-cadastrada.)
+        System.out.println("--- Autenticação ---");
+        System.out.println("Simulação de acesso à conta através da comparação da senha digitada com a senha forte recém-cadastrada.");
+        System.out.println();
+
+        int tentativasRestantes = 3;
+        boolean autenticado = false;
+
+        while (tentativasRestantes > 0) {
+            System.out.print("Digite sua senha: ");
+            String senhaDigitada = leitor.nextLine();
+
+            if (senhaDigitada.equals(senhaCadastrada)) {
+                autenticado = true;
+                System.out.println();
+                System.out.println("Acesso autorizado! Bem-vindo(a), " + primeiroNome + ".");
+                System.out.println();
+                break;
+            } else {
+                tentativasRestantes--;
+                if (tentativasRestantes > 0) {
+                    System.out.println("Senha incorreta! Tentativas restantes: " + tentativasRestantes);
+                    System.out.println();
+                }
             }
         }
 
