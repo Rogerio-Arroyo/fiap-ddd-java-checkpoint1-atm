@@ -12,8 +12,20 @@ public class FiapBankAtm {
         System.out.println("========================================");
         System.out.println();
 
-        System.out.print("Digite seu nome completo: ");
-        String nomeCompleto = leitor.nextLine().trim();
+        String nomeCompleto;
+        String regexNome = "^[A-Za-zÀ-ÿ\\s]+$";
+
+        while (true) {
+            System.out.print("Digite seu nome completo: ");
+            nomeCompleto = leitor.nextLine().trim();
+
+            if (nomeCompleto.matches(regexNome)) {
+                break;
+            } else {
+                System.out.println("Nome inválido! Digite apenas letras.");
+                System.out.println();
+            }
+        }
 
         String primeiroNome;
         int indicePrimeiroEspaco = nomeCompleto.indexOf(" ");
