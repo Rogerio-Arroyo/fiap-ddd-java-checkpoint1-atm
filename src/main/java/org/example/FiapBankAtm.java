@@ -121,6 +121,73 @@ public class FiapBankAtm {
 
             System.out.println();
 
+            // Etapa de Regras de Operação - 1° Consulta saldo
+            switch (opcaoMenu) {
 
+                case 1:
+                    System.out.printf("Seu saldo atual é: R$ %.2f%n", saldo);
+                    System.out.println();
+                    break;
+
+                // 2° Depósito
+                case 2:
+                    System.out.print("Digite o valor do depósito: R$ ");
+
+                    if (leitor.hasNextDouble()) {
+                        double valorDeposito = leitor.nextDouble();
+
+                        if (valorDeposito <= 0) {
+                            System.out.println("Valor inválido! O depósito deve ser maior que zero.");
+                        } else {
+                            saldo += valorDeposito;
+                            System.out.printf("Depósito de R$ %.2f realizado com sucesso!%n", valorDeposito);
+                            System.out.printf("Saldo atualizado: R$ %.2f%n", saldo);
+                        }
+                    } else {
+                        System.out.println("Valor inválido! Digite um número válido.");
+                        leitor.next(); // consumir entrada inválida
+                    }
+                    System.out.println();
+                    break;
+
+                // 3° Saque
+                case 3:
+                    System.out.print("Digite o valor do saque: R$ ");
+
+                    if (leitor.hasNextDouble()) {
+                        double valorSaque = leitor.nextDouble();
+
+                        if (valorSaque <= 0) {
+                            System.out.println("Valor inválido! O saque deve ser maior que zero.");
+                        } else if (valorSaque > saldo) {
+                            System.out.println("Saldo insuficiente para realizar o saque.");
+                            System.out.printf("Seu saldo atual é: R$ %.2f%n", saldo);
+                        } else {
+                            saldo -= valorSaque;
+                            System.out.printf("Saque de R$ %.2f realizado com sucesso!%n", valorSaque);
+                            System.out.printf("Saldo atualizado: R$ %.2f%n", saldo);
+                        }
+                    } else {
+                        System.out.println("Valor inválido! Digite um número válido.");
+                        leitor.next(); // consumir entrada inválida
+                    }
+                    System.out.println();
+                    break;
+
+                // 4º Sair
+                case 4:
+                    System.out.println("O FIAP Bank agradece sua preferência!");
+                    executando = false;
+                    break;
+
+                // Opção inválida
+                default:
+                    System.out.println("Opção inválida! Digite um número de 1 a 4.");
+                    System.out.println();
+                    break;
+            }
+        }
+
+        leitor.close();
     }
 }
