@@ -125,7 +125,7 @@ public class FiapBankAtm {
             } else {
                 System.out.println("Opção inválida! Digite um número de 1 a 4.");
                 System.out.println();
-                leitor.next(); // consumir entrada inválida
+                leitor.next();
                 continue;
             }
 
@@ -155,7 +155,7 @@ public class FiapBankAtm {
                         }
                     } else {
                         System.out.println("Valor inválido! Digite um número válido.");
-                        leitor.next(); // consumir entrada inválida
+                        leitor.next();
                     }
                     System.out.println();
                     break;
@@ -179,7 +179,7 @@ public class FiapBankAtm {
                         }
                     } else {
                         System.out.println("Valor inválido! Digite um número válido.");
-                        leitor.next(); // consumir entrada inválida
+                        leitor.next();
                     }
                     System.out.println();
                     break;
