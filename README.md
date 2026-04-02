@@ -5,7 +5,7 @@ Projeto desenvolvido para a disciplina de Domain Driven Design (Java), com o obj
 ## Estrutura do Projeto
 
 O código-fonte principal está localizado no seguinte diretório:
-src/main/java/org/example
+src/main/java
 
 Dentro dessa pasta encontra-se a classe principal:
 
